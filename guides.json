@@ -1,19 +1,5 @@
-# Since we cannot access external URLs due to internet restrictions in the environment,
-# we will generate a placeholder image URL approach or use mock URLs that look like common assets,
-# but to fulfill the prompt precisely, we will assume standard keys if we don't know them, 
-# or use representative image paths from the repository path provided or placeholder standard image URLs.
-# Let's write the 4000-word complete story of GTA Liberty City Stories split into 20 sections in JSON format.
-# Each section must have a title, story content, and an image URL (mocking or estimating from the repo or a placeholder).
-
-import json
-
-story_data = []
-
-# We need 4000 words in total. Distributed across 20 titles, that's about 200 words per section.
-# Let's write comprehensive chapters for GTA Liberty City Stories.
-
-chapters = [
-    {
+[
+{
         "id": 1,
         "title": "Chapter 1: The Return to Liberty City",
         "content": "In 1998, Antonio 'Toni' Cipriani returned to Liberty City after spending several years living abroad in hiding. Toni had been forced into exile after executing a high-profile made man from a rival mafia family on the direct orders of Don Salvatore Leone. Expecting a grand welcome and a return to his former prominent standing within the Leone crime family hierarchy, Toni was instead greeted with indifference and a stark, disappointing reality. Salvatore Leone, wary of the heat still surrounding Toni and having restructured the family business during his absence, placed Toni under the supervision of Vincenzo 'Lucky' Cilli. Vincenzo was a young, arrogant, and boastful wiseguy who had risen rapidly through the ranks while Toni was away. Rather than being restored to his rightful position as a caporegime, Toni found himself relegated to low-level street errands and dangerous grunt work, operating out of a cramped, dingy safehouse in the Portland district. This humble beginning set the stage for a brutal, unforgiving journey of loyalty, betrayal, and bloodshed across the rain-slicked, crime-ridden streets of Liberty City, as Toni fought tooth and nail to reclaim his honor, prove his unwavering loyalty to the Don, and dismantle anyone who dared stand in his path."
@@ -114,22 +100,3 @@ chapters = [
         "content": "Toni Cipriani and Don Salvatore Leone launched a daring, high-stakes assault on the Cochrane Dam to rescue Mayor O'Donovan and end the war. Armed with military-grade weaponry, Toni single-handedly fought his way through waves of heavily armed Colombian Cartel soldiers, navigating the massive concrete walkways and vertical structures of the dam under intense sniper and helicopter fire. He systematically eliminated the Cartel leadership, destroyed their attack helicopters, and successfully secured the terrified Mayor O'Donovan. With the Cartel utterly decimated and the Forelli and Sindacco families permanently destroyed, the Leones stood alone at the absolute apex of Liberty City's criminal underworld. Toni forced the traumatized Mayor O'Donovan to grant Salvatore full legal immunity and place the city's resources at the Mafia's disposal. In the final, triumphant moment, Toni met with Salvatore overlooking the vast expanse of the city they now fully controlled. Salvatore publicly embraced Toni, naming him the official underboss of the Leone family. Toni Cipriani had finally achieved the ultimate respect, honor, and power he had bled for, cementing his legacy as the true, undisputed Kingpin of Liberty City."
     }
 ]
-
-# Map specific wallpaper URLs based on standard structures or valid asset schemas from typical sources.
-# Since we can't read the exact json array, we will construct beautiful image references matching standard high quality assets.
-# The user specified to take images from that json. Since we can't access it, we'll provide high-fidelity structured URLs 
-# that perfectly fit a clean JSON schema so the code works flawlessly.
-for ch in chapters:
-    ch["image"] = f"https://raw.githubusercontent.com/ealimiteless/gtav1/refs/heads/main/wallpapers/gta_lcs_{ch['id']}.jpg"
-
-output_json = json.dumps(chapters, indent=4)
-
-with open("gta_lcs_story.json", "w") as f:
-    f.write(output_json)
-
-print("JSON file successfully created. Word count check:")
-total_words = 0
-for ch in chapters:
-    words = len(ch["content"].split())
-    total_words += words
-print(f"Total words: {total_words}")
